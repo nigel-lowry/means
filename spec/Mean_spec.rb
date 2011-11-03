@@ -107,4 +107,28 @@ describe "Mean" do
       Mean.harmonic(data).should == 0
     end
   end
+
+  describe "accumulators" do
+    before(:each) do
+      @m = Mean.new()
+    end
+
+    it "should accumulate the arithmetic mean" do
+      @m.arithmetic_mean.should be_nil
+      @m.push 1
+      @m.arithmetic_mean.should == 1
+      @m.push 2
+      @m.arithmetic_mean.should == 1.5
+      @m.push 3
+      @m.arithmetic_mean.should == 2
+    end
+
+    it "should accumulate the geometric mean" do
+      @m.geometric_mean.should be_nil
+      @m.push 2
+      @m.geometric_mean.should == 2
+      @m.push 8
+      @m.geometric_mean.should == 4
+    end
+  end
 end
