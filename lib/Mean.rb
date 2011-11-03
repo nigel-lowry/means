@@ -14,8 +14,7 @@ class Mean
   end
 
   def initialize
-    @sum = 0
-    @sum_of_reciprocals = 0
+    @sum = @sum_of_reciprocals = 0
     @product = 1
     @count = 0
   end
