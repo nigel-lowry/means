@@ -79,11 +79,6 @@ describe "Mean" do
       Mean.harmonic([element, element]).should == element
     end
 
-    it "should be the common value in an array when all values are equal" do
-      element = 5.5
-      Mean.harmonic([element, element]).should == element
-    end
-
     it "should be be according to the formula with two elements" do
       d1, d2 = 1.0, 2.0
       data = [d1, d2]
