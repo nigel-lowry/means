@@ -69,11 +69,6 @@ describe "Mean" do
       data = [d1, d2, d3]
       Mean.geometric(data).should == 1.0 / 2.0
     end
-
-    it "should be 31.622 for [1, 1000]" do
-      data = [1.0, 1000.0]
-      Mean.geometric(data).should be_within(0.005).of(31.622)
-    end
   end
 
   describe "#harmonic" do
