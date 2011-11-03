@@ -58,6 +58,18 @@ describe "Mean" do
       Mean.geometric(data).should == 0.0
     end
 
+    it "should be the square root of the product of two numbers" do
+      d1, d2 = 2, 8
+      data = [d1, d2]
+      Mean.geometric(data).should == 4
+    end
+
+    it "should be the cube root of the product of three numbers" do
+      d1, d2, d3 = 4, 1, 1.0 / 32.0
+      data = [d1, d2, d3]
+      Mean.geometric(data).should == 1.0 / 2.0
+    end
+
     it "should be 31.622 for [1, 1000]" do
       data = [1.0, 1000.0]
       Mean.geometric(data).should be_within(0.005).of(31.622)
