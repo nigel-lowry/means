@@ -44,8 +44,8 @@ describe "Mean" do
     end
 
     it "should be the singleton element of a singleton array" do
-        element = 5.5
-        Mean.geometric([element]).should == element
+      element = 5.5
+      Mean.geometric([element]).should == element
     end
 
     it "should be the common value in a when all values are equal" do
