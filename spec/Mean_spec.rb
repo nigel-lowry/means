@@ -9,6 +9,8 @@ describe "Mean" do
     end
 
     it "should work with integers too"
+    it "should work with empty array"
+    it "should work with singleton array"
   end
 
   describe "#geometric" do
