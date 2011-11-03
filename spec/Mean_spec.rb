@@ -60,7 +60,7 @@ describe "Mean" do
 
     it "should be zero when there is even a single zero" do
       data = [1.1, 2.2, 0.0]
-      Mean.geometric(data).should == 0.0
+      Mean.geometric(data).should == 0
     end
 
     it "should be the square root of the product of two numbers" do
@@ -102,6 +102,9 @@ describe "Mean" do
       Mean.harmonic(data).should be_within(0.01).of(1.7142)
     end
 
-    it "should do something when the array contains zeroes"
+    it "should be zero if there is even one zero" do 
+      data = [1.0, 2.0, 0.0]
+      Mean.harmonic(data).should == 0
+    end
   end
 end
