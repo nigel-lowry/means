@@ -1,6 +1,8 @@
+require 'mathn'
+
 class Mean
   def Mean.arithmetic data
-    data.reduce(:+) / data.size
+    data.reduce(:+) / data.size unless data.empty?
   end
 
   def Mean.geometric data
