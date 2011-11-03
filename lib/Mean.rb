@@ -1,7 +1,7 @@
 class Mean
   def Mean.arithmetic data
     sum = 0
-    data.each {|v| sum += v}
-    sum / data.size
+    total = data.inject {|sum, v| sum + v}
+    total / data.size
   end
 end
