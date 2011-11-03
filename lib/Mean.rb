@@ -4,7 +4,6 @@ class Mean
   end
 
   def Mean.geometric data
-    product = data.reduce(:*)
-    product ** (1.0 / data.size)
+    data.reduce(:*) ** (1.0 / data.size)
   end
 end
