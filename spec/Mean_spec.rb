@@ -10,4 +10,11 @@ describe "Mean" do
 
     it "should work with integers too"
   end
+
+  describe "#geometric" do
+    it "should be 31.622 for [1, 1000]" do
+      data = [1.0, 1000.0]
+      Mean.geometric(data).should be_close(31.622, 0.005)
+    end
+  end
 end
