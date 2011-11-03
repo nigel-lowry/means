@@ -130,5 +130,13 @@ describe "Mean" do
       @m.push 8
       @m.geometric_mean.should == 4
     end
+
+    it "should accumulate the harmonic mean" do
+      @m.harmonic_mean.should be_nil
+      @m.push 1
+      @m.harmonic_mean.should == 1
+      @m.push 2
+      @m.harmonic_mean.should == 4.0 / 3.0
+    end
   end
 end

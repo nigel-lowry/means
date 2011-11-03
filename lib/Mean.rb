@@ -15,12 +15,14 @@ class Mean
 
   def initialize
     @sum = 0
-    @count = 0
+    @sum_of_reciprocals = 0
     @product = 1
+    @count = 0
   end
 
   def push element
     @sum += element
+    @sum_of_reciprocals += (1 / element)
     @product *= element
     @count += 1
   end
@@ -31,6 +33,10 @@ class Mean
 
   def geometric_mean
     @product ** (1 / @count) unless @count == 0
+  end
+
+  def harmonic_mean
+    @count / @sum_of_reciprocals unless @count == 0
   end
 
 end
