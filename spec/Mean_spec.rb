@@ -36,6 +36,11 @@ describe "Mean" do
       data = [1.0, 2]
       Mean.arithmetic(data).should be_within(0.01).of(1.5) 
     end
+
+    it "should work with three numbers" do
+      data = [1, 2, 3]
+      Mean.arithmetic(data).should == 2
+    end
   end
 
   describe "#geometric" do
