@@ -6,10 +6,10 @@ class Mean
   end
 
   def Mean.geometric data
-    data.reduce(:*) ** (1.0 / data.size) unless data.empty?
+    data.reduce(:*) ** (1 / data.size) unless data.empty?
   end
 
   def Mean.harmonic data
-    data.size / data.reduce(0) {|sum, element| sum += (1.0 / element)}
+    data.size / data.reduce(0) {|sum, element| sum += (1 / element)}
   end
 end
