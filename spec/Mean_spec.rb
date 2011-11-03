@@ -13,6 +13,12 @@ describe "Mean" do
       Mean.arithmetic([element]).should == element
     end
 
+    it "should be the common value in a when all values are equal" do
+      element = 5.5
+
+      Mean.arithmetic([element, element]).should == element
+    end
+
     it "should be 1.5 for [1, 2]" do 
       data = [1.0, 2.0]
       Mean.arithmetic(data).should be_within(0.01).of(1.5)
@@ -48,6 +54,12 @@ describe "Mean" do
         Mean.geometric([element]).should == element
     end
 
+    it "should be the common value in a when all values are equal" do
+      element = 5.5
+
+      Mean.geometric([element, element]).should == element
+    end
+
     it "should be zero when there is even a single zero" do
       data = [1.1, 2.2, 0.0]
 
@@ -67,6 +79,12 @@ describe "Mean" do
       data = [d1, d2]
 
       Mean.harmonic(data).should be_within(0.01).of((2.0 * d1 * d2) / (d1 + d2))
+    end
+
+    it "should be the common value in a when all values are equal" do
+      element = 5.5
+
+      Mean.harmonic([element, element]).should == element
     end
 
 
