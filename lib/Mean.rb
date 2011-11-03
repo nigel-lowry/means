@@ -10,6 +10,6 @@ class Mean
   end
 
   def Mean.harmonic data
-    data.size / data.reduce(0) {|sum, element| sum += (1 / element)}
+    data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty?
   end
 end

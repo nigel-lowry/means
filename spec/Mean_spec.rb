@@ -65,10 +65,18 @@ describe "Mean" do
   end
 
   describe "#harmonic" do
-    it "should be be according to the formula with two elements" do
-      d1, d2 = 1.0, 2.0
-      data = [d1, d2]
-      Mean.harmonic(data).should be_within(0.01).of((2.0 * d1 * d2) / (d1 + d2))
+    it "should be nil for an empty array" do
+      Mean.harmonic([]).should be_nil
+    end
+
+    it "should be the singleton element of a singleton array" do
+        element = 5.5
+        Mean.harmonic([element]).should == element
+    end
+
+    it "should be the common value in a when all values are equal" do
+      element = 5.5
+      Mean.harmonic([element, element]).should == element
     end
 
     it "should be the common value in an array when all values are equal" do
@@ -76,6 +84,11 @@ describe "Mean" do
       Mean.harmonic([element, element]).should == element
     end
 
+    it "should be be according to the formula with two elements" do
+      d1, d2 = 1.0, 2.0
+      data = [d1, d2]
+      Mean.harmonic(data).should be_within(0.01).of((2.0 * d1 * d2) / (d1 + d2))
+    end
 
     it "should be 12/7 for [1, 2, 4]" do
       data = [1.0, 2.0, 4.0]
