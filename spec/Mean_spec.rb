@@ -19,4 +19,11 @@ describe "Mean" do
       Mean.geometric(data).should be_close(31.622, 0.005)
     end
   end
+
+  describe "#harmonic" do
+    it "should be 12/7 for [1, 2, 4]" do
+      data = [1.0, 2.0, 4.0]
+      Mean.harmonic(data).should be_close(12.0 / 7.0, 0.01)
+    end
+  end
 end
