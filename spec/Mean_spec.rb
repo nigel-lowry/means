@@ -62,6 +62,14 @@ describe "Mean" do
   end
 
   describe "#harmonic" do
+    it "should be be according to the formula of a two elements" do
+      d1, d2 = 1.0, 2.0
+      data = [d1, d2]
+
+      Mean.harmonic(data).should be_within(0.01).of((2.0 * d1 * d2) / (d1 + d2))
+    end
+
+
     it "should be 12/7 for [1, 2, 4]" do
       data = [1.0, 2.0, 4.0]
       Mean.harmonic(data).should be_within(0.01).of(1.7142)
