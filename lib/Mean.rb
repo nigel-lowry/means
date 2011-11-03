@@ -37,5 +37,4 @@ class Mean
   def harmonic_mean
     @count / @sum_of_reciprocals unless @count == 0
   end
-
 end
