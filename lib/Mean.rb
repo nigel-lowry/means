@@ -8,6 +8,6 @@ class Mean
   end
 
   def Mean.harmonic data
-    data.size / data.reduce(0) {|sum, v| sum += (1.0 / v)}
+    data.size / data.reduce(0) {|sum, element| sum += (1.0 / element)}
   end
 end
