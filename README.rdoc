@@ -1,6 +1,6 @@
 = means
 
-Description goes here.
+A very small gem to calculate the different kinds of mean in a data set.
 
 == Contributing to means
  
