@@ -38,6 +38,16 @@ describe "Mean" do
   end
 
   describe "#geometric" do
+    it "should be nil for an empty array" do
+      Mean.geometric([]).should be_nil
+    end
+
+    it "should be the singleton element of a singleton array" do
+        element = 5.5
+
+        Mean.geometric([element]).should == element
+    end
+
     it "should be 31.622 for [1, 1000]" do
       data = [1.0, 1000.0]
       Mean.geometric(data).should be_within(0.005).of(31.622)

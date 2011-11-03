@@ -6,7 +6,7 @@ class Mean
   end
 
   def Mean.geometric data
-    data.reduce(:*) ** (1.0 / data.size)
+    data.reduce(:*) ** (1.0 / data.size) unless data.empty?
   end
 
   def Mean.harmonic data
