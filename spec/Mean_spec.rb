@@ -48,12 +48,17 @@ describe "Mean" do
         Mean.geometric([element]).should == element
     end
 
-    it "should be 31.622 for [1, 1000]" do
-      data = [1.0, 1000.0]
-      Mean.geometric(data).should be_within(0.005).of(31.622)
+    it "should be zero when there is even a single zero" do
+      data = [1.1, 2.2, 0.0]
+
+      Mean.geometric(data).should == 0.0
     end
 
-    it "should do something when the array contains zeroes"
+    it "should be 31.622 for [1, 1000]" do
+      data = [1.0, 1000.0]
+
+      Mean.geometric(data).should be_within(0.005).of(31.622)
+    end
   end
 
   describe "#harmonic" do
