@@ -3,23 +3,6 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe "Mean" do
 
   describe "#arithmetic" do
-    it "should be 500.5 for [1, 1000]" do 
-      data = [1.0, 1000.0]
-      Mean.arithmetic(data).should be_within(0.01).of(500.5)
-    end
-
-    it "should work with integers" do
-      data = [1, 2]
-
-      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
-    end
-
-    it "should work with a mix of ints and floats" do
-      data = [1, 2.0]
-
-      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
-    end
-
     it "should be nil for an empty array" do
       Mean.arithmetic([]).should be_nil
     end
@@ -28,6 +11,29 @@ describe "Mean" do
       element = 5.5
 
       Mean.arithmetic([element]).should == element
+    end
+
+    it "should be 1.5 for [1, 2]" do 
+      data = [1.0, 2.0]
+      Mean.arithmetic(data).should be_within(0.01).of(1.5)
+    end
+
+    it "should work with integers" do
+      data = [1, 2]
+
+      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
+    end
+
+    it "should work with an int then a float" do
+      data = [1, 2.0]
+
+      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
+    end
+
+    it "should work with a float then an int" do
+      data = [1.0, 2]
+
+      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
     end
   end
 
