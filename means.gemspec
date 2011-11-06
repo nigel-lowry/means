@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "lib/Mean.rb",
+    "means.gemspec",
     "spec/Mean_spec.rb",
     "spec/spec_helper.rb"
   ]
