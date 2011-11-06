@@ -14,15 +14,10 @@ class Mean
   end
 
   def initialize(params = {})
-    @sum = params[:sum]
-    @sum_of_reciprocals = params[:sum_of_reciprocals]
-    @product = params[:product]
-    @count = params[:count]
-
-    @sum ||= 0
-    @sum_of_reciprocals ||= 0
-    @product ||= 1
-    @count ||= 0
+    @sum ||= params[:sum] ||= 0
+    @sum_of_reciprocals ||= params[:sum_of_reciprocals] ||= 0
+    @product ||= params[:product] ||= 1
+    @count ||= params[:count] ||= 0
   end
 
   def push element
