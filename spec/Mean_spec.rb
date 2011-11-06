@@ -139,4 +139,27 @@ describe "Mean" do
       @m.harmonic_mean.should == 4.0 / 3.0
     end
   end
+
+  describe "initialising accumulator" do
+    it "should resurrect the arithmetic mean" do
+      m = Mean.new(:count => 1, :sum => 1)
+      m.arithmetic_mean.should == 1
+      m.push 2
+      m.arithmetic_mean.should == 1.5
+    end
+
+    it "should resurrect the geometric mean" do
+      m = Mean.new(:count => 1, :product => 2)
+      m.geometric_mean.should == 2
+      m.push 8
+      m.geometric_mean.should == 4
+    end
+
+    it "should resurrect the harmonic mean" do
+      m = Mean.new(:count => 1, :sum_of_reciprocals => 1)
+      m.harmonic_mean.should == 1
+      m.push 2
+      m.harmonic_mean.should == 4.0 / 3.0
+    end
+  end
 end

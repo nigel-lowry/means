@@ -13,10 +13,16 @@ class Mean
     data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty?
   end
 
-  def initialize
-    @sum = @sum_of_reciprocals = 0
-    @product = 1
-    @count = 0
+  def initialize(params = {:sum => 0, :sum_of_reciprocals => 0, :product => 1, :count => 0})
+    @sum = params[:sum]
+    @sum_of_reciprocals = params[:sum_of_reciprocals]
+    @product = params[:product]
+    @count = params[:count]
+
+    @sum ||= 0
+    @sum_of_reciprocals ||= 0
+    @product ||= 1
+    @count ||= 0
   end
 
   def push element
