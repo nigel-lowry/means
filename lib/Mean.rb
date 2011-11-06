@@ -7,17 +7,17 @@ require 'mathn'
 class Mean
 
   # Calculate the arithmetic mean of _data_
-  def Mean.arithmetic data
+  def Mean.arithmetic(data)
     data.reduce(:+) / data.size unless data.empty?
   end
 
   # Calculate the geometric mean of _data_
-  def Mean.geometric data
+  def Mean.geometric(data)
     data.reduce(:*) ** (1 / data.size) unless data.empty?
   end
 
   # Calculate the harmonic mean of _data_
-  def Mean.harmonic data
+  def Mean.harmonic(data)
     data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty?
   end
 
@@ -35,7 +35,7 @@ class Mean
   end
 
   # Add _element_ to the data set
-  def push element
+  def push(element)
     @sum += element
     @sum_of_reciprocals += (1 / element)
     @product *= element
