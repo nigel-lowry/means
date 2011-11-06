@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/nigel-lowry/means"
   gem.license = "MIT"
   gem.summary = %Q{Small gem to work out the arithmetic, harmonic and geometric means of a data set}
-  gem.description = %Q{Calculates the diferent kinds of mean for a data set. Also has methods to do this cumulatively given an accumulator rather than going over whole data set each time given a single new value}
+  gem.description = %Q{Calculates the diferent means for a data set (arithmetic, geometric and harmonic).}
   gem.email = "nigel-lowry@ultra.eclipse.co.uk"
   gem.authors = ["Nigel Lowry"]
   # dependencies defined in Gemfile
