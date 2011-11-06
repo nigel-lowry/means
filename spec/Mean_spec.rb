@@ -142,21 +142,21 @@ describe "Mean" do
 
   describe "initialising accumulator" do
     it "should resurrect the arithmetic mean using the count and sum" do
-      m = Mean.new(:count => 1, :sum => 1)
+      m = Mean.new(count: 1, sum: 1)
       m.arithmetic_mean.should == 1
       m.push 2
       m.arithmetic_mean.should == 1.5
     end
 
     it "should resurrect the geometric mean using the count and product" do
-      m = Mean.new(:count => 1, :product => 2)
+      m = Mean.new(count: 1, product: 2)
       m.geometric_mean.should == 2
       m.push 8
       m.geometric_mean.should == 4
     end
 
     it "should resurrect the harmonic mean using the count and sum of the reciprocals" do
-      m = Mean.new(:count => 1, :sum_of_reciprocals => 1)
+      m = Mean.new(count: 1, sum_of_reciprocals: 1)
       m.harmonic_mean.should == 1
       m.push 2
       m.harmonic_mean.should == 4.0 / 3.0
