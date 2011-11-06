@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "means"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nigel Lowry"]
   s.date = "2011-11-06"
-  s.description = "Calculates the diferent kinds of mean for a data set. Also has methods to do this cumulatively given an accumulator rather than going over whole data set each time given a single new value"
+  s.description = "Calculates the diferent means for a data set (arithmetic, geometric and harmonic)."
   s.email = "nigel-lowry@ultra.eclipse.co.uk"
   s.extra_rdoc_files = [
     "LICENSE.txt",
