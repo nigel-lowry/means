@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nigel Lowry"]
   s.date = "2011-11-06"
-  s.description = "Calculates the diferent means for a data set (arithmetic, geometric and harmonic)."
+  s.description = "Calculates the different means for a data set (arithmetic, geometric and harmonic)."
   s.email = "nigel-lowry@ultra.eclipse.co.uk"
   s.extra_rdoc_files = [
     "LICENSE.txt",
