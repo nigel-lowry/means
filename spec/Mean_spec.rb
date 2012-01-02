@@ -58,7 +58,7 @@ describe "Mean" do
       Mean.geometric([element, element]).should == element
     end
 
-    it "is zero when there is even a single zero" do
+    it "is zero when there are any zeroes" do
       data = [1.1, 2.2, 0.0]
       Mean.geometric(data).should == 0
     end
@@ -102,7 +102,7 @@ describe "Mean" do
       Mean.harmonic(data).should be_within(0.01).of(1.7142)
     end
 
-    it "is zero if there is even one zero" do 
+    it "is zero if there are any zeroes" do 
       data = [1.0, 2.0, 0.0]
       Mean.harmonic(data).should == 0
     end
