@@ -60,6 +60,7 @@ describe "Mean" do
   end
 
   describe ".geometric" do
+
     it_behaves_like "all means"
 
     it_behaves_like "non-arithmetic means"
@@ -67,13 +68,13 @@ describe "Mean" do
     it "is the square root of the product of two numbers" do
       d1, d2 = 2, 8
       data = [d1, d2]
-      Mean.geometric(data).should == 4
+      Mean.geometric(data).should == Math.sqrt(d1 * d2)
     end
 
     it "is the cube root of the product of three numbers" do
       d1, d2, d3 = 4, 1, 1.0 / 32.0
       data = [d1, d2, d3]
-      Mean.geometric(data).should == 1.0 / 2.0
+      Mean.geometric(data).should == Math.cbrt(d1 * d2 * d3)
     end
   end
 
