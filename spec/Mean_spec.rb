@@ -98,7 +98,7 @@ describe "Mean" do
       @m = Mean.new()
     end
 
-    describe ".arithmetic_mean" do
+    describe "#arithmetic_mean" do
       it "accumulates the arithmetic mean" do
         @m.arithmetic_mean.should be_nil
         @m.push 1
@@ -110,7 +110,7 @@ describe "Mean" do
       end
     end
 
-    describe ".geometric_mean" do
+    describe "#geometric_mean" do
       it "accumulates the geometric mean" do
         @m.geometric_mean.should be_nil
         @m.push 2
@@ -120,7 +120,7 @@ describe "Mean" do
       end
     end
 
-    describe ".harmonic_mean" do
+    describe "#harmonic_mean" do
       it "accumulates the harmonic mean" do
         @m.harmonic_mean.should be_nil
         @m.push 1
