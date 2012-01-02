@@ -30,7 +30,6 @@ end
 describe "Mean" do
 
   describe ".arithmetic" do
-
     it_behaves_like "all means"
 
     it "is 1.5 for [1, 2]" do 
@@ -60,7 +59,6 @@ describe "Mean" do
   end
 
   describe ".geometric" do
-
     it_behaves_like "all means"
 
     it_behaves_like "non-arithmetic means"
