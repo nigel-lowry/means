@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "Mean" do
 
-  describe "#arithmetic" do
+  describe ".arithmetic" do
     it "is nil for an empty array" do
       Mean.arithmetic([]).should be_nil
     end
@@ -43,7 +43,7 @@ describe "Mean" do
     end
   end
 
-  describe "#geometric" do
+  describe ".geometric" do
     it "is nil for an empty array" do
       Mean.geometric([]).should be_nil
     end
@@ -76,7 +76,7 @@ describe "Mean" do
     end
   end
 
-  describe "#harmonic" do
+  describe ".harmonic" do
     it "is nil for an empty array" do
       Mean.harmonic([]).should be_nil
     end
