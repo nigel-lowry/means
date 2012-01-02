@@ -51,19 +51,7 @@ describe "Mean" do
   end
 
   describe ".geometric" do
-    it "is nil for an empty array" do
-      Mean.geometric([]).should be_nil
-    end
-
-    it "is the singleton element of a singleton array" do
-      element = 5.5
-      Mean.geometric([element]).should == element
-    end
-
-    it "is the common value in a when all values are equal" do
-      element = 5.5
-      Mean.geometric([element, element]).should == element
-    end
+    it_behaves_like "all means"
 
     it "is zero when there are any zeroes" do
       data = [1.1, 2.2, 0.0]
@@ -84,19 +72,7 @@ describe "Mean" do
   end
 
   describe ".harmonic" do
-    it "is nil for an empty array" do
-      Mean.harmonic([]).should be_nil
-    end
-
-    it "is the singleton element of a singleton array" do
-        element = 5.5
-        Mean.harmonic([element]).should == element
-    end
-
-    it "is the common value in a when all values are equal" do
-      element = 5.5
-      Mean.harmonic([element, element]).should == element
-    end
+    it_behaves_like "all means"
 
     it "is according to the formula with two elements" do
       d1, d2 = 1.0, 2.0
