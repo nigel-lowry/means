@@ -82,7 +82,7 @@ describe "Mean" do
 
     it "is 12/7 for [1, 2, 4]" do
       data = [1.0, 2.0, 4.0]
-      Mean.harmonic(data).should be_within(0.01).of(1.7142)
+      Mean.harmonic(data).should be_within(0.01).of(12/7)
     end
 
     it "is zero if there are any zeroes" do 
