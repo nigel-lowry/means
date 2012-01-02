@@ -24,20 +24,6 @@ describe "Mean" do
 
     it_behaves_like "all means"
 
-    it "is nil for an empty array" do
-      Mean.arithmetic([]).should be_nil
-    end
-
-    it "is the singleton element of a singleton array" do
-      element = 5.5
-      Mean.arithmetic([element]).should == element
-    end
-
-    it "is the common value in an array when all values are equal" do
-      element = 5.5
-      Mean.arithmetic([element, element]).should == element
-    end
-
     it "is 1.5 for [1, 2]" do 
       data = [1.0, 2.0]
       Mean.arithmetic(data).should be_within(0.01).of(1.5)
