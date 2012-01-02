@@ -18,6 +18,15 @@ shared_examples_for "all means" do
   end
 end
 
+shared_examples_for "non-arithmetic means" do
+  [:geometric, :harmonic].each do |mean|
+    it "is zero when there are any zeroes" do
+      data = [1.1, 2.2, 0.0]
+      Mean.send(mean, data).should == 0
+    end
+  end
+end
+
 describe "Mean" do
 
   describe ".arithmetic" do
@@ -53,10 +62,7 @@ describe "Mean" do
   describe ".geometric" do
     it_behaves_like "all means"
 
-    it "is zero when there are any zeroes" do
-      data = [1.1, 2.2, 0.0]
-      Mean.geometric(data).should == 0
-    end
+    it_behaves_like "non-arithmetic means"
 
     it "is the square root of the product of two numbers" do
       d1, d2 = 2, 8
@@ -74,6 +80,8 @@ describe "Mean" do
   describe ".harmonic" do
     it_behaves_like "all means"
 
+    it_behaves_like "non-arithmetic means"
+
     it "is according to the formula with two elements" do
       d1, d2 = 1.0, 2.0
       data = [d1, d2]
@@ -83,11 +91,6 @@ describe "Mean" do
     it "is 12/7 for [1, 2, 4]" do
       data = [1.0, 2.0, 4.0]
       Mean.harmonic(data).should be_within(0.01).of(12/7)
-    end
-
-    it "is zero if there are any zeroes" do 
-      data = [1.0, 2.0, 0.0]
-      Mean.harmonic(data).should == 0
     end
   end
 
