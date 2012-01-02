@@ -113,30 +113,36 @@ describe "Mean" do
       @m = Mean.new()
     end
 
-    it "accumulates the arithmetic mean" do
-      @m.arithmetic_mean.should be_nil
-      @m.push 1
-      @m.arithmetic_mean.should == 1
-      @m.push 2
-      @m.arithmetic_mean.should == 1.5
-      @m.push 3
-      @m.arithmetic_mean.should == 2
+    describe ".arithmetic_mean" do
+      it "accumulates the arithmetic mean" do
+        @m.arithmetic_mean.should be_nil
+        @m.push 1
+        @m.arithmetic_mean.should == 1
+        @m.push 2
+        @m.arithmetic_mean.should == 1.5
+        @m.push 3
+        @m.arithmetic_mean.should == 2
+      end
     end
 
-    it "accumulates the geometric mean" do
-      @m.geometric_mean.should be_nil
-      @m.push 2
-      @m.geometric_mean.should == 2
-      @m.push 8
-      @m.geometric_mean.should == 4
+    describe ".geometric_mean" do
+      it "accumulates the geometric mean" do
+        @m.geometric_mean.should be_nil
+        @m.push 2
+        @m.geometric_mean.should == 2
+        @m.push 8
+        @m.geometric_mean.should == 4
+      end
     end
 
-    it "accumulates the harmonic mean" do
-      @m.harmonic_mean.should be_nil
-      @m.push 1
-      @m.harmonic_mean.should == 1
-      @m.push 2
-      @m.harmonic_mean.should == 4.0 / 3.0
+    describe ".harmonic_mean" do
+      it "accumulates the harmonic mean" do
+        @m.harmonic_mean.should be_nil
+        @m.push 1
+        @m.harmonic_mean.should == 1
+        @m.push 2
+        @m.harmonic_mean.should == 4.0 / 3.0
+      end
     end
   end
 
