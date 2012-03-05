@@ -53,18 +53,18 @@ class Mean
   # Calculate the arithmetic mean
   # @return [Numeric] the arithmetic mean
   def arithmetic_mean
-    @sum / @count unless @count == 0
+    @sum / @count unless @count.zero?
   end
 
   # Calculate the geometric mean
   # @return [Numeric] the geometric mean
   def geometric_mean
-    @product ** (1 / @count) unless @count == 0
+    @product ** (1 / @count) unless @count.zero?
   end
 
   # Calculate the harmonic mean
   # @return [Numeric] the harmonic mean
   def harmonic_mean
-    @count / @sum_of_reciprocals unless @count == 0
+    @count / @sum_of_reciprocals unless @count.zero?
   end
 end
