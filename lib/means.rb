@@ -45,7 +45,7 @@ class Mean
   # Add element to the data set
   # @param [Numeric] element the element to add
   def push(element)
-    if element <= 0
+    if Mean.zero_or_negative? element
       @includes_zero_or_negative = true
     end
 
@@ -76,6 +76,10 @@ class Mean
   private 
 
     def Mean.includes_zero_or_negative? data
-      data.any? { |v| v <= 0 }
+      data.any? { |element| zero_or_negative? element }
+    end
+
+    def Mean.zero_or_negative? element
+      element <= 0
     end
 end
