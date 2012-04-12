@@ -75,7 +75,6 @@ describe "Mean" do
 
   describe ".geometric" do
     it_behaves_like "all means"
-
     it_behaves_like "non-arithmetic means"
 
     it "is the square root of the product of two numbers" do
@@ -93,7 +92,6 @@ describe "Mean" do
 
   describe ".harmonic" do
     it_behaves_like "all means"
-
     it_behaves_like "non-arithmetic means"
 
     it "is according to the formula with two elements" do
