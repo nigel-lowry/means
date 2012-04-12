@@ -193,5 +193,9 @@ describe "Mean" do
       m.push 2
       m.harmonic_mean.should == 4.0 / 3.0
     end
+
+    it "rejects a negative count" do
+      lambda { Mean.new(count: -1) }.should raise_error
+    end
   end
 end

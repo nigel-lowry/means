@@ -35,6 +35,8 @@ class Mean
   # [harmonic mean] needs `:sum_of_reciprocals` and `:count`
   # @param [Hash{Symbol => Numeric}]
   def initialize(params={})
+    raise %{cannot have negative count of "#{params[:count]}"} if params.has_key? :count and params[:count] < 0
+
     @sum                ||= params[:sum]                ||= 0
     @sum_of_reciprocals ||= params[:sum_of_reciprocals] ||= 0
     @product            ||= params[:product]            ||= 1
