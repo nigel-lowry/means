@@ -201,5 +201,9 @@ describe "Mean" do
     it "rejects negative sum of reciprocals" do
       lambda { Mean.new(sum_of_reciprocals: -1) }.should raise_error
     end
+
+    it "rejects negative product" do
+      lambda { Mean.new(product: -1) }.should raise_error
+    end
   end
 end
