@@ -56,9 +56,9 @@ class Mean
       @includes_zero_or_negative = true
     end
 
-    @sum += element
     @sum_of_reciprocals += (1 / element) unless @includes_zero_or_negative
     @product *= element unless @includes_zero_or_negative
+    @sum += element
     @count += 1
   end
 
