@@ -61,6 +61,11 @@ describe "Mean" do
       data = [0, 2]
       Mean.arithmetic(data).should == 1
     end
+
+    it "works with negative numbers" do
+      data = [-1, 3]
+      Mean.arithmetic(data).should == 1
+    end
   end
 
   describe ".geometric" do
