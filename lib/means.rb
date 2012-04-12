@@ -17,14 +17,14 @@ class Mean
   # @param (see Mean.arithmetic)
   # @return [Numeric] the geometric mean
   def Mean.geometric(data)
-    data.reduce(:*) ** (1 / data.size) unless data.empty? or data.include? 0
+    data.reduce(:*) ** (1 / data.size) unless data.empty? or data.any? { |v| v <= 0 }
   end
 
   # Calculate the harmonic mean
   # @param (see Mean.arithmetic)
   # @return [Numeric] the harmonic mean
   def Mean.harmonic(data)
-    data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty? or data.include? 0
+    data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty? or data.any? { |v| v <= 0 }
   end
 
   # Remember the initial state. 
