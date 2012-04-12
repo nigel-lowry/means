@@ -56,6 +56,11 @@ describe "Mean" do
       data = [1, 2, 3]
       Mean.arithmetic(data).should == 2
     end
+
+    it "works with zero" do
+      data = [0, 2]
+      Mean.arithmetic(data).should == 1
+    end
   end
 
   describe ".geometric" do
