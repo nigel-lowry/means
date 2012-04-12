@@ -52,9 +52,7 @@ class Mean
   # Add element to the data set
   # @param [Numeric] element the element to add
   def push(element)
-    if Mean.zero_or_negative? element
-      @includes_zero_or_negative = true
-    end
+    @includes_zero_or_negative = true if Mean.zero_or_negative? element
 
     @sum_of_reciprocals += (1 / element) unless @includes_zero_or_negative
     @product *= element unless @includes_zero_or_negative
