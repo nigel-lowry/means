@@ -34,6 +34,9 @@ class Mean
   # [geometric mean] needs `:product` and `:count`
   # [harmonic mean] needs `:sum_of_reciprocals` and `:count`
   # @param [Hash{Symbol => Numeric}]
+  # @raise if `:count` is negative
+  # @raise if `:sum_of_reciprocals` is negative
+  # @raise if `:product` is negative
   def initialize(params={})
     raise_error_for_negative params, :count
     raise_error_for_negative params, :sum_of_reciprocals
