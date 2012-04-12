@@ -36,6 +36,7 @@ class Mean
   # @param [Hash{Symbol => Numeric}]
   def initialize(params={})
     raise %{cannot have negative count of "#{params[:count]}"} if params.has_key? :count and params[:count] < 0
+    raise %{cannot have negative sum of reciprocals of "#{params[:sum_of_reciprocals]}"} if params.has_key? :sum_of_reciprocals and params[:sum_of_reciprocals] < 0
 
     @sum                ||= params[:sum]                ||= 0
     @sum_of_reciprocals ||= params[:sum_of_reciprocals] ||= 0
