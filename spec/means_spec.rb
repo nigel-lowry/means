@@ -117,6 +117,8 @@ describe "Mean" do
         @m.arithmetic_mean.should == 1.5
         @m.push 3
         @m.arithmetic_mean.should == 2
+        @m.push 0
+        @m.arithmetic_mean.should == 1.5
       end
     end
 
@@ -127,6 +129,8 @@ describe "Mean" do
         @m.geometric_mean.should == 2
         @m.push 8
         @m.geometric_mean.should == 4
+        @m.push 0
+        @m.geometric_mean.should be_nil
       end
     end
 
@@ -137,6 +141,8 @@ describe "Mean" do
         @m.harmonic_mean.should == 1
         @m.push 2
         @m.harmonic_mean.should == 4.0 / 3.0
+        @m.push 0
+        @m.harmonic_mean.should be_nil
       end
     end
   end
