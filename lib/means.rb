@@ -17,14 +17,14 @@ class Mean
   # @param (see Mean.arithmetic)
   # @return [Numeric] the geometric mean
   def Mean.geometric(data)
-    data.reduce(:*) ** (1 / data.size) unless data.empty? or data.any? { |v| v <= 0 }
+    data.reduce(:*) ** (1 / data.size) unless data.empty? or includes_zero_or_negative? data
   end
 
   # Calculate the harmonic mean
   # @param (see Mean.arithmetic)
   # @return [Numeric] the harmonic mean
   def Mean.harmonic(data)
-    data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty? or data.any? { |v| v <= 0 }
+    data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty? or includes_zero_or_negative? data
   end
 
   # Remember the initial state. 
@@ -72,4 +72,10 @@ class Mean
   def harmonic_mean
     @count / @sum_of_reciprocals unless @count.zero? or @includes_zero
   end
+
+  private 
+
+    def Mean.includes_zero_or_negative? data
+      data.any? { |v| v <= 0 }
+    end
 end
