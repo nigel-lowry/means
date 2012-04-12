@@ -8,21 +8,21 @@ class Mean
 
   # Calculate the arithmetic mean
   # @param [Array<Numeric>] data the data values
-  # @return [Numeric] the arithmetic mean
+  # @return [Numeric, nil] the arithmetic mean or nil if there is no data
   def Mean.arithmetic(data)
     data.reduce(:+) / data.size unless data.empty?
   end
 
   # Calculate the geometric mean
   # @param (see Mean.arithmetic)
-  # @return [Numeric] the geometric mean
+  # @return [Numeric, nil] the geometric mean or nil if there is no data or any elements are zero or negative
   def Mean.geometric(data)
     data.reduce(:*) ** (1 / data.size) unless data.empty? or includes_zero_or_negative? data
   end
 
   # Calculate the harmonic mean
   # @param (see Mean.arithmetic)
-  # @return [Numeric] the harmonic mean
+  # @return [Numeric, nil] the harmonic mean or nil if there is no data or any elements are zero or negative
   def Mean.harmonic(data)
     data.size / data.reduce(0) {|sum, element| sum += (1 / element)} unless data.empty? or includes_zero_or_negative? data
   end
@@ -56,19 +56,19 @@ class Mean
   end
 
   # Calculate the arithmetic mean
-  # @return [Numeric] the arithmetic mean
+  # @return [Numeric, nil] the arithmetic mean or nil if there is no data
   def arithmetic_mean
     @sum / @count unless @count.zero?
   end
 
   # Calculate the geometric mean
-  # @return [Numeric] the geometric mean
+  # @return [Numeric, nil] the geometric mean or nil if there is no data or any elements are zero or negative
   def geometric_mean
     @product ** (1 / @count) unless @count.zero? or @includes_zero_or_negative
   end
 
   # Calculate the harmonic mean
-  # @return [Numeric] the harmonic mean
+  # @return [Numeric, nil] the harmonic mean or nil if there is no data or any elements are zero or negative
   def harmonic_mean
     @count / @sum_of_reciprocals unless @count.zero? or @includes_zero_or_negative
   end
