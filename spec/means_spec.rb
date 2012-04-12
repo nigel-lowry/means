@@ -122,6 +122,8 @@ describe "Mean" do
         @m.arithmetic_mean.should == 2
         @m.push 0
         @m.arithmetic_mean.should == 1.5
+        @m.push -1
+        @m.arithmetic_mean.should == 1
       end
     end
 
