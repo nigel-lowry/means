@@ -54,8 +54,11 @@ class Mean
   def push(element)
     @includes_zero_or_negative = true if Mean.zero_or_negative? element
 
-    @sum_of_reciprocals += (1 / element) unless @includes_zero_or_negative
-    @product *= element unless @includes_zero_or_negative
+    unless @includes_zero_or_negative
+      @sum_of_reciprocals += (1 / element)
+      @product *= element
+    end
+
     @sum += element
     @count += 1
   end
