@@ -39,19 +39,19 @@ class Mean
     @sum_of_reciprocals ||= params[:sum_of_reciprocals] ||= 0
     @product            ||= params[:product]            ||= 1
     @count              ||= params[:count]              ||= 0
-    @includes_zero = false
+    @includes_zero_or_negative = false
   end
 
   # Add element to the data set
   # @param [Numeric] element the element to add
   def push(element)
-    if element.zero?
-      @includes_zero = true
+    if element <= 0
+      @includes_zero_or_negative = true
     end
 
     @sum += element
-    @sum_of_reciprocals += (1 / element) unless @includes_zero
-    @product *= element unless @includes_zero
+    @sum_of_reciprocals += (1 / element) unless @includes_zero_or_negative
+    @product *= element unless @includes_zero_or_negative
     @count += 1
   end
 
@@ -64,13 +64,13 @@ class Mean
   # Calculate the geometric mean
   # @return [Numeric] the geometric mean
   def geometric_mean
-    @product ** (1 / @count) unless @count.zero? or @includes_zero
+    @product ** (1 / @count) unless @count.zero? or @includes_zero_or_negative
   end
 
   # Calculate the harmonic mean
   # @return [Numeric] the harmonic mean
   def harmonic_mean
-    @count / @sum_of_reciprocals unless @count.zero? or @includes_zero
+    @count / @sum_of_reciprocals unless @count.zero? or @includes_zero_or_negative
   end
 
   private 
