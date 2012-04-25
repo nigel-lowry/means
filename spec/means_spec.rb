@@ -37,40 +37,15 @@ describe "Mean" do
   describe ".arithmetic" do
     it_behaves_like "all means"
 
-    it "is 1.5 for [1, 2]" do 
-      data = [1.0, 2.0]
-      Mean.arithmetic(data).should be_within(0.01).of(1.5)
-    end
+    specify { Mean.arithmetic([1.0, 2.0]).should be_within(0.01).of(1.5) }
+    specify { Mean.arithmetic([1, 2]).should be_within(0.01).of(1.5) }
+    specify { Mean.arithmetic([1, 2.0]).should be_within(0.01).of(1.5) }
+    specify { Mean.arithmetic([1.0, 2]).should be_within(0.01).of(1.5) }
 
-    it "works with integers" do
-      data = [1, 2]
-      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
-    end
-
-    it "works with an int then a float" do
-      data = [1, 2.0]
-      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
-    end
-
-    it "works with a float then an int" do
-      data = [1.0, 2]
-      Mean.arithmetic(data).should be_within(0.01).of(1.5) 
-    end
-
-    it "works with three numbers" do
-      data = [1, 2, 3]
-      Mean.arithmetic(data).should == 2
-    end
-
-    it "works with zero" do
-      data = [0, 2]
-      Mean.arithmetic(data).should == 1
-    end
-
-    it "works with negative numbers" do
-      data = [-1, 3]
-      Mean.arithmetic(data).should == 1
-    end
+    specify { Mean.arithmetic([1, 2, 3]).should == 2 }
+    
+    specify { Mean.arithmetic([0, 2]).should == 1 }
+    specify { Mean.arithmetic([-1, 3]).should == 1 }
   end
 
   describe ".geometric" do
