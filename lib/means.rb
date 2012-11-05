@@ -98,11 +98,11 @@ class Mean
       raise_error_for_negative params, :product
     end
 
-    def Mean.includes_zero_or_negative? data
+    def self.includes_zero_or_negative? data
       data.any? {|element| zero_or_negative? element}
     end
 
-    def Mean.zero_or_negative? element
+    def self.zero_or_negative? element
       element <= 0
     end
 
