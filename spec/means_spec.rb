@@ -169,6 +169,10 @@ describe "Mean" do
       m.harmonic_mean.should == 4.0 / 3.0
     end
 
+    it "rejects an unknown key" do
+      lambda { Mean.new(count: 1, blah: 1) }.should raise_error
+    end
+
     it "rejects a negative count" do
       lambda { Mean.new(count: -1) }.should raise_error
     end

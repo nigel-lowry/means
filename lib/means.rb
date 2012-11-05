@@ -1,4 +1,5 @@
 require 'mathn'
+require 'active_support/all'
 
 # Allows calculation of arithmetic, geometric and harmonic means.
 # Class methods allow the passing in of a data set. 
@@ -38,6 +39,7 @@ class Mean
   # @raise if `:sum_of_reciprocals` is negative
   # @raise if `:product` is negative
   def initialize(params={})
+    params.assert_valid_keys :count, :sum_of_reciprocals, :product, :sum
     raise_error_for_negative params, :count
     raise_error_for_negative params, :sum_of_reciprocals
     raise_error_for_negative params, :product
