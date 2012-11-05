@@ -44,10 +44,19 @@ class Mean
     raise_error_for_negative params, :sum_of_reciprocals
     raise_error_for_negative params, :product
 
-    @sum                = params[:sum]                || 0
-    @sum_of_reciprocals = params[:sum_of_reciprocals] || 0
-    @product            = params[:product]            || 1
-    @count              = params[:count]              || 0
+    defaults = {
+      sum: 0,
+      sum_of_reciprocals: 0,
+      product: 1,
+      count: 0
+    }
+
+    options = params.reverse_merge defaults
+
+    @sum                = options[:sum]
+    @sum_of_reciprocals = options[:sum_of_reciprocals]
+    @product            = options[:product]
+    @count              = options[:count]
     @includes_zero_or_negative = false
   end
 
