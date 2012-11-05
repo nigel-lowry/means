@@ -94,10 +94,10 @@ class Mean
 
       options = params.reverse_merge defaults
 
-      @sum                = options[:sum]
-      @sum_of_reciprocals = options[:sum_of_reciprocals]
-      @product            = options[:product]
-      @count              = options[:count]
+      @sum                       = options[:sum]
+      @sum_of_reciprocals        = options[:sum_of_reciprocals]
+      @product                   = options[:product]
+      @count                     = options[:count]
       @includes_zero_or_negative = false
     end
 
