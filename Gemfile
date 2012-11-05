@@ -16,3 +16,5 @@ end
 group :development, :test do
   gem 'debugger'
 end
+
+gem 'activesupport'
