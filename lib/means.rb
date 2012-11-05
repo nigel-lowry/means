@@ -39,10 +39,7 @@ class Mean
   # @raise if `:sum_of_reciprocals` is negative
   # @raise if `:product` is negative
   def initialize(params={})
-    params.assert_valid_keys :count, :sum_of_reciprocals, :product, :sum
-    raise_error_for_negative params, :count
-    raise_error_for_negative params, :sum_of_reciprocals
-    raise_error_for_negative params, :product
+    check_params params
 
     defaults = {
       sum: 0,
@@ -92,7 +89,14 @@ class Mean
     @count / @sum_of_reciprocals unless @count.zero? or @includes_zero_or_negative
   end
 
-  private 
+  private
+
+    def check_params params
+      params.assert_valid_keys :count, :sum_of_reciprocals, :product, :sum
+      raise_error_for_negative params, :count
+      raise_error_for_negative params, :sum_of_reciprocals
+      raise_error_for_negative params, :product
+    end
 
     def Mean.includes_zero_or_negative? data
       data.any? {|element| zero_or_negative? element}
