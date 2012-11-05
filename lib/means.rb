@@ -40,21 +40,7 @@ class Mean
   # @raise if `:product` is negative
   def initialize(params={})
     check_params params
-
-    defaults = {
-      sum: 0,
-      sum_of_reciprocals: 0,
-      product: 1,
-      count: 0
-    }
-
-    options = params.reverse_merge defaults
-
-    @sum                = options[:sum]
-    @sum_of_reciprocals = options[:sum_of_reciprocals]
-    @product            = options[:product]
-    @count              = options[:count]
-    @includes_zero_or_negative = false
+    assign_defaults params
   end
 
   # Add element to the data set
@@ -96,6 +82,23 @@ class Mean
       raise_error_for_negative params, :count
       raise_error_for_negative params, :sum_of_reciprocals
       raise_error_for_negative params, :product
+    end
+
+    def assign_defaults params
+      defaults = {
+        sum: 0,
+        sum_of_reciprocals: 0,
+        product: 1,
+        count: 0
+      }
+
+      options = params.reverse_merge defaults
+
+      @sum                = options[:sum]
+      @sum_of_reciprocals = options[:sum_of_reciprocals]
+      @product            = options[:product]
+      @count              = options[:count]
+      @includes_zero_or_negative = false
     end
 
     def self.includes_zero_or_negative? data
