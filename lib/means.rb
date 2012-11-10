@@ -102,7 +102,7 @@ class Mean
     end
 
     def self.includes_zero_or_negative? data
-      data.any? {|element| zero_or_negative? element}
+      data.any? {|element| zero_or_negative? element }
     end
 
     def self.zero_or_negative? element
