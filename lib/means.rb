@@ -11,7 +11,7 @@ class Mean
   # @param [Array<Numeric>] data the data values
   # @return [Numeric, nil] the arithmetic mean or nil if there is no data
   def Mean.arithmetic(data)
-    data.reduce(:+) / data.size unless data.empty?
+    data.sum / data.size unless data.empty?
   end
 
   # Calculate the geometric mean
