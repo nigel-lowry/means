@@ -170,19 +170,19 @@ describe "Mean" do
     end
 
     it "rejects an unknown key" do
-      lambda { Mean.new(count: 1, blah: 1) }.should raise_error
+      expect { Mean.new(count: 1, blah: 1) }.to raise_error
     end
 
     it "rejects a negative count" do
-      lambda { Mean.new(count: -1) }.should raise_error
+      expect { Mean.new(count: -1) }.to raise_error
     end
 
     it "rejects negative sum of reciprocals" do
-      lambda { Mean.new(sum_of_reciprocals: -1) }.should raise_error
+      expect { Mean.new(sum_of_reciprocals: -1) }.to raise_error
     end
 
     it "rejects negative product" do
-      lambda { Mean.new(product: -1) }.should raise_error
+      expect { Mean.new(product: -1) }.to raise_error
     end
   end
 end
