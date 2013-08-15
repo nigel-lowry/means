@@ -82,67 +82,65 @@ describe "Mean" do
   end
 
   describe "accumulators" do
-    before(:each) do
-      @m = Mean.new()
-    end
+    let(:m) { Mean.new }
 
     describe "#arithmetic_mean" do
       it "accumulates the arithmetic mean" do
-        @m.arithmetic_mean.should be_nil
-        @m.push 1
-        @m.arithmetic_mean.should == 1
-        @m.push 2
-        @m.arithmetic_mean.should == 1.5
-        @m.push 3
-        @m.arithmetic_mean.should == 2
-        @m.push 0
-        @m.arithmetic_mean.should == 1.5
-        @m.push -1
-        @m.arithmetic_mean.should == 1
+        m.arithmetic_mean.should be_nil
+        m.push 1
+        m.arithmetic_mean.should == 1
+        m.push 2
+        m.arithmetic_mean.should == 1.5
+        m.push 3
+        m.arithmetic_mean.should == 2
+        m.push 0
+        m.arithmetic_mean.should == 1.5
+        m.push -1
+        m.arithmetic_mean.should == 1
       end
     end
 
     describe "#geometric_mean" do
       it "accumulates the geometric mean until zero" do
-        @m.geometric_mean.should be_nil
-        @m.push 2
-        @m.geometric_mean.should == 2
-        @m.push 8
-        @m.geometric_mean.should == 4
-        @m.push 0
-        @m.geometric_mean.should be_nil
+        m.geometric_mean.should be_nil
+        m.push 2
+        m.geometric_mean.should == 2
+        m.push 8
+        m.geometric_mean.should == 4
+        m.push 0
+        m.geometric_mean.should be_nil
       end
 
       it "accumulates the geometric mean until negative" do
-        @m.geometric_mean.should be_nil
-        @m.push 2
-        @m.geometric_mean.should == 2
-        @m.push 8
-        @m.geometric_mean.should == 4
-        @m.push -1
-        @m.geometric_mean.should be_nil
+        m.geometric_mean.should be_nil
+        m.push 2
+        m.geometric_mean.should == 2
+        m.push 8
+        m.geometric_mean.should == 4
+        m.push -1
+        m.geometric_mean.should be_nil
       end
     end
 
     describe "#harmonic_mean" do
       it "accumulates the harmonic mean until zero" do
-        @m.harmonic_mean.should be_nil
-        @m.push 1
-        @m.harmonic_mean.should == 1
-        @m.push 2
-        @m.harmonic_mean.should == 4.0 / 3.0
-        @m.push 0
-        @m.harmonic_mean.should be_nil
+        m.harmonic_mean.should be_nil
+        m.push 1
+        m.harmonic_mean.should == 1
+        m.push 2
+        m.harmonic_mean.should == 4.0 / 3.0
+        m.push 0
+        m.harmonic_mean.should be_nil
       end
 
       it "accumulates the harmonic mean until negative" do
-        @m.harmonic_mean.should be_nil
-        @m.push 1
-        @m.harmonic_mean.should == 1
-        @m.push 2
-        @m.harmonic_mean.should == 4.0 / 3.0
-        @m.push -1
-        @m.harmonic_mean.should be_nil
+        m.harmonic_mean.should be_nil
+        m.push 1
+        m.harmonic_mean.should == 1
+        m.push 2
+        m.harmonic_mean.should == 4.0 / 3.0
+        m.push -1
+        m.harmonic_mean.should be_nil
       end
     end
   end
