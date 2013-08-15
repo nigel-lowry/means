@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "means"
-  s.version = "1.2.3"
+  s.version = "1.2.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nigel Lowry"]
-  s.date = "2012-11-05"
+  s.date = "2013-08-15"
   s.description = "Calculates the different means for a data set (arithmetic, geometric and harmonic)."
   s.email = "nigel-lowry@ultra.eclipse.co.uk"
   s.extra_rdoc_files = [
