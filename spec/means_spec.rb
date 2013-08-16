@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "Mean" do
   describe ".arithmetic" do
-    it_behaves_like "all means"
+    it_behaves_like "all means", :arithmetic
 
     specify { Mean.arithmetic([1.0, 2.0]).should be_within(0.01).of(1.5) }
     specify { Mean.arithmetic([1, 2]).should be_within(0.01).of(1.5) }
@@ -16,8 +16,8 @@ describe "Mean" do
   end
 
   describe ".geometric" do
-    it_behaves_like "all means"
-    it_behaves_like "non-arithmetic means"
+    it_behaves_like "all means", :geometric
+    it_behaves_like "non-arithmetic means", :geometric
 
     it "is the square root of the product of two numbers" do
       d1, d2 = 2, 8
@@ -33,8 +33,8 @@ describe "Mean" do
   end
 
   describe ".harmonic" do
-    it_behaves_like "all means"
-    it_behaves_like "non-arithmetic means"
+    it_behaves_like "all means", :harmonic
+    it_behaves_like "non-arithmetic means", :harmonic
 
     it "is according to the formula with two elements" do
       d1, d2 = 1.0, 2.0
