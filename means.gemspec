@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "means"
-  s.version = "1.2.4"
+  s.version = "1.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nigel Lowry"]
-  s.date = "2013-08-15"
+  s.date = "2013-08-16"
   s.description = "Calculates the different means for a data set (arithmetic, geometric and harmonic)."
   s.email = "nigel-lowry@ultra.eclipse.co.uk"
   s.extra_rdoc_files = [
@@ -29,7 +29,9 @@ Gem::Specification.new do |s|
     "lib/means.rb",
     "means.gemspec",
     "spec/means_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "spec/support/shared_examples_for_all_means.rb",
+    "spec/support/shared_examples_for_non_arithmetic_means.rb"
   ]
   s.homepage = "http://github.com/nigel-lowry/means"
   s.licenses = ["MIT"]
