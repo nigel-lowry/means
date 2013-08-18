@@ -13,8 +13,12 @@ group :development do
   gem "simplecov"
 end
 
-group :development, :test do
+group :debug do
   gem 'debugger'
+end
+
+group :test do
+  gem 'rake'
 end
 
 gem 'activesupport'
