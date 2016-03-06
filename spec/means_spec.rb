@@ -135,19 +135,19 @@ describe "Mean" do
     end
 
     it "rejects an unknown key" do
-      expect { Mean.new(count: 1, blah: 1) }.to raise_error
+      expect { Mean.new(count: 1, blah: 1) }.to raise_error(ArgumentError, 'Unknown key: blah')
     end
 
     it "rejects a negative count" do
-      expect { Mean.new(count: -1) }.to raise_error
+      expect { Mean.new(count: -1) }.to raise_error(RuntimeError, 'cannot have negative "count" of "-1"')
     end
 
     it "rejects negative sum of reciprocals" do
-      expect { Mean.new(sum_of_reciprocals: -1) }.to raise_error
+      expect { Mean.new(sum_of_reciprocals: -1) }.to raise_error(RuntimeError, 'cannot have negative "sum_of_reciprocals" of "-1"')
     end
 
     it "rejects negative product" do
-      expect { Mean.new(product: -1) }.to raise_error
+      expect { Mean.new(product: -1) }.to raise_error(RuntimeError, 'cannot have negative "product" of "-1"')
     end
   end
 end
