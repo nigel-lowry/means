@@ -8,7 +8,7 @@ source "http://rubygems.org"
 group :development do
   gem "rspec", "~> 3.4.0"
   gem "yard", "~> 0.7.4"
-  gem "bundler", "~> 1.0.0"
+  gem "bundler", "~> 1.11.2"
   gem "jeweler", "~> 1.6.4"
   gem "simplecov"
 end

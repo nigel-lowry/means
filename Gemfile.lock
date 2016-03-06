@@ -45,10 +45,13 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  bundler (~> 1.0.0)
+  bundler (~> 1.11.2)
   debugger
   jeweler (~> 1.6.4)
   rake
   rspec (~> 3.4.0)
   simplecov
   yard (~> 0.7.4)
+
+BUNDLED WITH
+   1.11.2
