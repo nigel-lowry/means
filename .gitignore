@@ -11,6 +11,9 @@ doc
 # bundler
 .bundle
 
+# RubyMine generated
+.idea
+
 # jeweler generated
 pkg
 
