@@ -14,7 +14,7 @@ group :development do
 end
 
 group :debug do
-  gem 'debugger'
+  gem 'pry'
 end
 
 group :test do
