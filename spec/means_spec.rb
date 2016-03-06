@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Mean do
   describe '.arithmetic' do
     it_behaves_like 'all means', :arithmetic
